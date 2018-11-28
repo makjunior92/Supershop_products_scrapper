@@ -1,7 +1,10 @@
 from flask import Flask,request,Response
 from flask import render_template
 from shwapno import Shwapno
+from flask_cors import CORS
 app = Flask(__name__)
+
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 @app.route('/')
 def hello_world():
